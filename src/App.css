@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+* {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+	min-height: 100vh;
+	display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+	flex: 1;
+	padding: var(--space-md);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.side-bar {
+	padding: var(--space-md);
+	background-color: #e9e6ec;
 }
 
-.App-link {
-  color: #61dafb;
+.main-nav {
+	display: flex;
+	justify-content: space-between;
+}
+.main-nav-left {
+	font-size: var(--text-md);
+	font-weight: 500;
+	color: rgba(19, 30, 58, 0.5);
+	display: flex;
+	align-items: center;
+}
+.main-nav-right {
+	font-size: var(--text-md);
+	font-weight: 500;
+	color: rgba(19, 30, 58, 0.5);
+	display: flex;
+	align-items: center;
+}
+.main-nav-left > * {
+	margin-right: var(--space-xs);
+}
+.main-nav-right > * {
+	margin-right: var(--space-md);
+}
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	margin: var(--space-lg) 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.invite {
+	padding: var(--space-xs) var(--space-lg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px black dashed;
+	border-radius: var(--space-md);
+}
+.invite span {
+	margin-left: var(--space-md);
+}
+
+.nav-toggler {
+	cursor: pointer;
+}
+.nav-toggler:hover {
+	color: rgba(19, 30, 58, 0.5);
+}
+
+.nav-toggler:active {
+	color: blue;
+}
+
+.nav-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-list > li {
+	margin: var(--space-xs) 0;
+}
+
+.nav-list > li > a {
+	margin-bottom: var(--space-md);
+	font-weight: 500;
+	font-size: var(--text-md);
+	display: flex;
+	align-items: center;
+	color: rgba(19, 30, 58, 1);
+}
+
+.nav-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: var(--space-lg);
+}
+.nav-header span {
+	font-weight: 700;
+	font-size: var(--text-xl);
+	margin-left: var(--space-sm);
+}
+
+.nav-list > li :hover {
+	color: rgba(29, 92, 252, 0.3);
+}
+.nav-list > li :active {
+	color: blue;
+}
+
+#active-nav {
+	color: rgba(29, 92, 252, 1);
+}
+.nav-list > li > a > span {
+	margin-left: var(--space-sm);
+	margin-right: var(--space-xxl);
+}
+
+.calender-wrapper {
+	display: flex;
+	min-height: 100%;
+	position: relative;
+}
+.calender-day {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.calender-day-text {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: var(--space-sm);
+}
+
+.calender-day-border {
+	border-right: 1px solid #e9e6ec;
+	width: 100%;
+	flex: 1;
+	position: relative;
+	margin-top: var(--space-sm);
+	/* padding: 0 var(--space-xs); */
+}
+
+.work-items-container {
+	position: absolute;
+	/* width: 100%; */
+
+	left: 0;
+	right: 0;
+	margin: var(--space-md);
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.work-item-value {
+	text-align: right;
+	padding-right: var(--space-md);
+	font-weight: 500;
+	vertical-align: middle;
+
+	flex: 1;
+	align-self: center;
+	font-weight: 700;
+}
+.work-item {
+	height: 50px;
+	top: 10;
+
+	position: absolute;
+	border-radius: var(--space-lg);
+	color: white;
+	display: flex;
+}
+.work-item-inner {
+	border-radius: var(--space-lg);
+	color: white;
+	display: flex;
+
+	align-items: center;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	padding-left: var(--space-md);
+}
+
+.work-item-wrapper {
+	/* background-color: yellow; */
+	display: flex;
+	margin: var(--space-md) 0;
+	align-items: center;
+	position: relative;
+}
+.dot-circle {
+	margin-right: var(--space-md);
+}
+
+.calender-day-text-light {
+	font-weight: 500;
+
+	/* margin-right: var(--space-xs); */
+}
+
+.work-item-name {
+	padding: var(--space-md);
+	border: 1px solid #e9e6ec;
+	border-radius: var(--space-md);
+	background-color: white;
+	z-index: 2;
+	width: 200px;
+}
+.calender-day-text-bold {
+	font-weight: 400;
+}
+
+.is-today {
+	background-color: rgba(29, 92, 252, 1);
+
+	border-radius: var(--space-sm);
+}
+.is-today span {
+	color: white;
+}
+
+.transition-width {
+	transition: width 3s;
 }
