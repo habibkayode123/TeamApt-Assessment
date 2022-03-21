@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 const SideBarLinks = ({
 	name,
 	icon: Icon,

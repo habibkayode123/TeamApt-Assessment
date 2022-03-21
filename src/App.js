@@ -1,12 +1,9 @@
 import './App.css';
 
 import {
-	FaAlignJustify,
 	FaAngleRight,
-	FaBars,
 	FaBell,
 	FaCentercode,
-	FaDotCircle,
 	FaEnvelopeOpenText,
 	FaHistory,
 	FaIndent,
@@ -20,7 +17,6 @@ import {
 } from 'react-icons/fa';
 import { useEffect, useRef, useState } from 'react';
 
-import { BsBackspaceFill } from 'react-icons/bs';
 import CalenderDay from './components/CalenderDay';
 import SideBarLinks from './components/SideBarLinks';
 import WorkItem from './components/WorkItem';
